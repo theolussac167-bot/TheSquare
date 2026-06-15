@@ -28,7 +28,7 @@ public class Upgrade : MonoBehaviour
 
     void Start()
     {
-        player = FindObjectOfType<Player>();
+        player = Player.instance;
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
         currentCostCoins = data.costCoins;
