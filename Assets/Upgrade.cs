@@ -23,6 +23,7 @@ public class Upgrade : MonoBehaviour
     public TextMeshProUGUI costLabel;        // Text (TMP) (1) — custo (amarelo)
 
     private int upgradesBought = 0;
+    public int UpgradesBought => upgradesBought;
     private int currentCostCoins;
     private Player player;
 
