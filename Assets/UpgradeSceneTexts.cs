@@ -5,6 +5,7 @@ public class UpgradeSceneTexts : MonoBehaviour
 {
     private Player player;
     public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI orbsText;
 
     void Start()
     {
@@ -15,5 +16,6 @@ public class UpgradeSceneTexts : MonoBehaviour
     {
         if (player == null) return; // safety check
         coinsText.text = player.coins.ToString();
+        orbsText.text = player.orbs.ToString();
     }
 }

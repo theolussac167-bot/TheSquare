@@ -14,6 +14,8 @@ public class EnemieSpawn : MonoBehaviour
 
     private bool isSpawning = false;
 
+    private const string OrbUnlockUpgradeKey = "Upgrade_OrbUnlock_bought";
+
     void Start()
     {
         SpawnWave();
@@ -77,6 +79,16 @@ public class EnemieSpawn : MonoBehaviour
         if (waveText != null)
         {
             waveText.text = "Wave: " + currentWave;
+        }
+
+        if (currentWave % 5 == 0 && player != null)
+        {
+            Debug.Log("Chegou");
+            if (PlayerPrefs.GetInt(OrbUnlockUpgradeKey, 0) >= 1)
+            {
+                Debug.Log("+1orb");
+                player.orbs++;
+            }
         }
 
         SpawnWave();
